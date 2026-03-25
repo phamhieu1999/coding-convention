@@ -69,6 +69,19 @@ coding-convention/
 │   ├── 04-response-format.ts
 │   └── 05-api-versioning.ts
 │
+├── security/                    # 5 security conventions
+│   ├── 01-input-validation.ts
+│   ├── 02-authentication.ts
+│   ├── 03-authorization.ts
+│   ├── 04-data-sanitization.ts
+│   └── 05-rate-limiting.ts
+│
+├── database-conventions/        # 4 database best practices
+│   ├── 01-naming-conventions.ts
+│   ├── 02-migration-strategy.ts
+│   ├── 03-query-optimization.ts
+│   └── 04-transaction-patterns.ts
+│
 └── README.md                    # ← Bạn đang đây
 ```
 
@@ -178,6 +191,29 @@ coding-convention/
 
 ---
 
+## 🔒 Security — 5 Conventions
+
+| # | Convention | File | Nội dung chính |
+|---|-----------|------|----------------|
+| 01 | [**Input Validation**](security/01-input-validation.ts) | Validate input | Whitelist, DTO decorators, nested validation, custom validators, file upload |
+| 02 | [**Authentication**](security/02-authentication.ts) | JWT & Auth | Password hashing, JWT strategy, refresh token rotation, login security |
+| 03 | [**Authorization**](security/03-authorization.ts) | Access control | RBAC, role hierarchy, resource ownership, fine-grained permissions, ABAC |
+| 04 | [**Data Sanitization**](security/04-data-sanitization.ts) | Prevent attacks | SQL/NoSQL injection, XSS, path traversal, URL sanitization, security headers |
+| 05 | [**Rate Limiting**](security/05-rate-limiting.ts) | Throttling | Per-endpoint limits, sliding window (Redis), rate limit tiers, response headers |
+
+---
+
+## 🗄️ Database Conventions — 4 Best Practices
+
+| # | Convention | File | Nội dung chính |
+|---|-----------|------|----------------|
+| 01 | [**Naming Conventions**](database-conventions/01-naming-conventions.ts) | DB naming | Table/column/FK/index naming, TypeORM entity mapping, enum columns |
+| 02 | [**Migration Strategy**](database-conventions/02-migration-strategy.ts) | Schema changes | Reversible migrations, zero-downtime rename, data vs schema separation |
+| 03 | [**Query Optimization**](database-conventions/03-query-optimization.ts) | Performance | N+1 fix, index strategy, composite index ordering, EXPLAIN ANALYZE |
+| 04 | [**Transaction Patterns**](database-conventions/04-transaction-patterns.ts) | Data integrity | Isolation levels, optimistic locking, saga pattern, idempotency |
+
+---
+
 ## 🚀 Cách sử dụng
 
 ### Chạy thử
@@ -222,7 +258,9 @@ Mỗi file đều theo cấu trúc:
 | Design Patterns | 17 files | TypeScript |
 | NestJS Conventions | 7 files | TypeScript |
 | API Design | 5 files | TypeScript |
-| **Tổng cộng** | **47 files** | — |
+| Security | 5 files | TypeScript |
+| Database Conventions | 4 files | TypeScript |
+| **Tổng cộng** | **56 files** | — |
 
 ### Quy tắc vàng
 
