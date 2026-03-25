@@ -1,6 +1,6 @@
 # 📖 Coding Convention — TypeScript Best Practices
 
-Bộ tài liệu coding convention toàn diện cho TypeScript/NestJS, bao gồm **18 quy tắc Clean Code**, **17 Design Patterns**, **7 NestJS Conventions** và **5 API Design patterns** với ví dụ thực tế so sánh ❌ BAD vs ✅ GOOD.
+Bộ tài liệu coding convention toàn diện cho TypeScript/NestJS, bao gồm **18 quy tắc Clean Code**, **17 Design Patterns**, **7 NestJS Conventions**, **5 API Design**, **5 Security**, **4 Database**, **4 Performance** và **4 Testing Advanced** patterns với ví dụ thực tế so sánh ❌ BAD vs ✅ GOOD.
 
 > Mỗi file là một module độc lập, có thể chạy bằng `ts-node` để xem kết quả.
 
@@ -81,6 +81,18 @@ coding-convention/
 │   ├── 02-migration-strategy.ts
 │   ├── 03-query-optimization.ts
 │   └── 04-transaction-patterns.ts
+│
+├── performance/                 # 4 performance best practices
+│   ├── 01-caching-strategies.ts
+│   ├── 02-queue-patterns.ts
+│   ├── 03-database-pooling.ts
+│   └── 04-memory-management.ts
+│
+├── testing-advanced/            # 4 advanced testing patterns
+│   ├── 01-unit-test-patterns.ts
+│   ├── 02-integration-test.ts
+│   ├── 03-e2e-test.ts
+│   └── 04-test-fixtures.ts
 │
 └── README.md                    # ← Bạn đang đây
 ```
@@ -214,6 +226,28 @@ coding-convention/
 
 ---
 
+## ⚡ Performance — 4 Best Practices
+
+| # | Convention | File | Nội dung chính |
+|---|-----------|------|----------------|
+| 01 | [**Caching Strategies**](performance/01-caching-strategies.ts) | Cache patterns | Cache-aside, invalidation, stampede prevention, multi-layer, key strategy |
+| 02 | [**Queue Patterns**](performance/02-queue-patterns.ts) | Job queue | BullMQ producer/consumer, retry, dead-letter queue, concurrency, cron jobs |
+| 03 | [**Database Pooling**](performance/03-database-pooling.ts) | Connection pool | Pool sizing formula, health check, read replica, pool monitoring |
+| 04 | [**Memory Management**](performance/04-memory-management.ts) | Memory | Stream processing, batch with back-pressure, WeakRef cache, bounded collections, leak detection |
+
+---
+
+## 🧪 Testing Advanced — 4 Patterns
+
+| # | Convention | File | Nội dung chính |
+|---|-----------|------|----------------|
+| 01 | [**Unit Test Patterns**](testing-advanced/01-unit-test-patterns.ts) | Unit tests | AAA pattern, mock/stub/spy, error testing, NestJS TestingModule, coverage guidelines |
+| 02 | [**Integration Test**](testing-advanced/02-integration-test.ts) | Integration | Real DB, transaction rollback, test containers, Redis integration |
+| 03 | [**E2E Test**](testing-advanced/03-e2e-test.ts) | End-to-end | Supertest setup, CRUD lifecycle, auth flow, seed helpers |
+| 04 | [**Test Fixtures**](testing-advanced/04-test-fixtures.ts) | Test data | Factory pattern, builder pattern, presets, seeders, fixture organization |
+
+---
+
 ## 🚀 Cách sử dụng
 
 ### Chạy thử
@@ -235,6 +269,8 @@ ts-node coding-convention/design-patterns/creational/singleton.ts
 3. **Advanced** → `15-type-safety` đến `18-code-smells` + Design Patterns
 4. **NestJS** → `nestjs-conventions/` — dành cho dev làm việc với NestJS
 5. **API Architecture** → `api-design/` — thiết kế API chuẩn RESTful
+6. **Performance** → `performance/` — caching, queue, pooling, memory
+7. **Testing** → `testing-advanced/` — unit, integration, e2e, fixtures
 
 ### Format mỗi file
 
@@ -260,7 +296,9 @@ Mỗi file đều theo cấu trúc:
 | API Design | 5 files | TypeScript |
 | Security | 5 files | TypeScript |
 | Database Conventions | 4 files | TypeScript |
-| **Tổng cộng** | **56 files** | — |
+| Performance | 4 files | TypeScript |
+| Testing Advanced | 4 files | TypeScript |
+| **Tổng cộng** | **64 files** | — |
 
 ### Quy tắc vàng
 
