@@ -1,6 +1,6 @@
 # 📖 Coding Convention — TypeScript Best Practices
 
-Bộ tài liệu coding convention toàn diện cho TypeScript/NestJS, bao gồm **18 quy tắc Clean Code** và **17 Design Patterns** với ví dụ thực tế so sánh ❌ BAD vs ✅ GOOD.
+Bộ tài liệu coding convention toàn diện cho TypeScript/NestJS, bao gồm **18 quy tắc Clean Code**, **17 Design Patterns**, **7 NestJS Conventions** và **5 API Design patterns** với ví dụ thực tế so sánh ❌ BAD vs ✅ GOOD.
 
 > Mỗi file là một module độc lập, có thể chạy bằng `ts-node` để xem kết quả.
 
@@ -52,6 +52,22 @@ coding-convention/
 │   │   ├── strategy.ts
 │   │   └── template-method.ts
 │   └── README.md
+│
+├── nestjs-conventions/          # 7 NestJS best practices
+│   ├── 01-module-structure.ts
+│   ├── 02-controller-conventions.ts
+│   ├── 03-service-patterns.ts
+│   ├── 04-repository-patterns.ts
+│   ├── 05-pipes-guards-interceptors.ts
+│   ├── 06-exception-filters.ts
+│   └── 07-config-management.ts
+│
+├── api-design/                  # 5 API design conventions
+│   ├── 01-rest-naming.ts
+│   ├── 02-http-status-codes.ts
+│   ├── 03-pagination-filtering.ts
+│   ├── 04-response-format.ts
+│   └── 05-api-versioning.ts
 │
 └── README.md                    # ← Bạn đang đây
 ```
@@ -136,6 +152,32 @@ coding-convention/
 
 ---
 
+## 🏗️ NestJS Conventions — 7 Best Practices
+
+| # | Convention | File | Nội dung chính |
+|---|-----------|------|----------------|
+| 01 | [**Module Structure**](nestjs-conventions/01-module-structure.ts) | Module organization | Feature modules, barrel exports, SharedModule, Dynamic modules, tránh circular dependency |
+| 02 | [**Controller Conventions**](nestjs-conventions/02-controller-conventions.ts) | Thin controllers | DTO validation, response serialization, RESTful route naming, Param pipes |
+| 03 | [**Service Patterns**](nestjs-conventions/03-service-patterns.ts) | Business logic | SRP, transaction handling, service composition, interface-based DI |
+| 04 | [**Repository Patterns**](nestjs-conventions/04-repository-patterns.ts) | Data access | Custom repository, select fields, soft delete, pagination, tránh N+1 |
+| 05 | [**Pipes, Guards & Interceptors**](nestjs-conventions/05-pipes-guards-interceptors.ts) | Middleware layer | Validation pipe, auth guard, roles guard, logging/timeout interceptor |
+| 06 | [**Exception Filters**](nestjs-conventions/06-exception-filters.ts) | Error handling | Domain exceptions, global filter, error code registry, validation mapping |
+| 07 | [**Config Management**](nestjs-conventions/07-config-management.ts) | Configuration | Env validation, typed config namespace, .env convention, multi-environment |
+
+---
+
+## 🌐 API Design — 5 Conventions
+
+| # | Convention | File | Nội dung chính |
+|---|-----------|------|----------------|
+| 01 | [**REST Naming**](api-design/01-rest-naming.ts) | URL convention | Plural nouns, nested resources, actions, query params, kebab-case |
+| 02 | [**HTTP Status Codes**](api-design/02-http-status-codes.ts) | Status codes | 2xx/4xx/5xx usage guide, quick reference table, NestJS examples |
+| 03 | [**Pagination & Filtering**](api-design/03-pagination-filtering.ts) | List endpoints | Offset vs cursor pagination, typed filter DTO, comparison table |
+| 04 | [**Response Format**](api-design/04-response-format.ts) | Standard envelope | `{ success, data, meta }`, error format, response builder helper |
+| 05 | [**API Versioning**](api-design/05-api-versioning.ts) | Versioning strategy | URL path vs header, breaking changes, deprecation lifecycle |
+
+---
+
 ## 🚀 Cách sử dụng
 
 ### Chạy thử
@@ -155,6 +197,8 @@ ts-node coding-convention/design-patterns/creational/singleton.ts
 1. **Beginner** → Bắt đầu từ `01-naming` đến `08-magic-numbers`
 2. **Intermediate** → `09-testing` đến `14-guard-clauses`
 3. **Advanced** → `15-type-safety` đến `18-code-smells` + Design Patterns
+4. **NestJS** → `nestjs-conventions/` — dành cho dev làm việc với NestJS
+5. **API Architecture** → `api-design/` — thiết kế API chuẩn RESTful
 
 ### Format mỗi file
 
@@ -176,7 +220,9 @@ Mỗi file đều theo cấu trúc:
 |--------|----------|----------|
 | Clean Code Rules | 18 files | TypeScript |
 | Design Patterns | 17 files | TypeScript |
-| **Tổng cộng** | **35 files** | — |
+| NestJS Conventions | 7 files | TypeScript |
+| API Design | 5 files | TypeScript |
+| **Tổng cộng** | **47 files** | — |
 
 ### Quy tắc vàng
 
