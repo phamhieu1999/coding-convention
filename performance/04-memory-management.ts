@@ -12,6 +12,9 @@
  * 6. Avoid closure leaks — đừng giữ reference không cần thiết
  */
 
+declare function setImmediate(callback: (...args: unknown[]) => void): unknown;
+declare const process: { memoryUsage(): { heapUsed: number; heapTotal: number; rss: number; external: number } };
+
 // ═══════════════════════════════════════════
 // Rule 4.1: Stream Processing for Large Data
 // ═══════════════════════════════════════════

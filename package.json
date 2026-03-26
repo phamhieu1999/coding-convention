@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "coding-convention",
+  "version": "1.0.0",
+  "description": "NestJS/TypeScript Coding Convention Library — 85 files",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.0"
+  }
+}
